@@ -5,13 +5,15 @@ import control.ControleCadastraArtista;
 import control.ControleCadastraMusica;
 import control.ControleExibirArtista;
 import control.ControleExibirMusicas;
+import control.ControlePesquisarMusicaArtista;
+import control.ControlePesquisarMusicaNome;
 import model.BD;
 
 public class Principal {
 
 	public static void main(String[] args) {
-	/*//Instanciar o BD
-		BD bd = new BD();
+	//Instanciar o BD
+		/*BD bd = new BD();
 		//Carregar os artista do aquivo
 		bd.carregarArtistas();
 		bd.carregarMusicas();
@@ -23,6 +25,16 @@ public class Principal {
 		ControleExibirMusicas cem = new ControleExibirMusicas(bd);
 		//Instanciar Cadastra Musica
 		ControleCadastraMusica ccm = new ControleCadastraMusica(bd);
+		//instanciar PesquisarMusica
+		ControlePesquisarMusicaNome cpmn = new ControlePesquisarMusicaNome(bd);
+		//Instanciar Pesuisar artista musica
+		ControlePesquisarMusicaArtista cpma = new ControlePesquisarMusicaArtista(bd);
+		
+		//Pesquisar por artista
+		cpma.pesquisarMusicaArtistaNome();
+		
+		//Pesquisar Musica
+		cpmn.pesquisarMusicaNome();
 		
 		//Exibir Artista
 		cea.exibirArtistas();

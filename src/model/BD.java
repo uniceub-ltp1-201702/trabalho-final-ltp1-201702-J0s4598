@@ -105,8 +105,32 @@ public class BD {
 		return retorno;
 	}
 	
+	//Retornar Musica de acordo com nome
+	public Musica getMusicaPorNome(String nome) {
+		Musica retorno = null;
+		
+		//percorrer a lista de musica
+		for (int i = 0; i < this.musicas.size(); i++) {
+			if (this.musicas.get(i).getNome().equals(nome)) {
+				retorno = this.musicas.get(i);
+			}
+		}
+		return retorno;
+	}
 	
 	
+	//Retornar Musica de acordo com Artista
+		public ArrayList<Musica> musicaArtista(String nome){
+			ArrayList<Musica> resultado = new ArrayList<Musica>();
+			
+			//Percorer a lista de musica
+			for (int i = 0; i < this.musicas.size(); i++) {
+				if (this.musicas.get(i).getArtistaBanda().equals(nome)) {
+					resultado.add(this.musicas.get(i));
+				}
+			}
+			return resultado;
+		}
 	
 	
 	

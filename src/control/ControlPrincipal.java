@@ -13,6 +13,8 @@ public class ControlPrincipal {
 	private ControleExibirArtista cea;
 	private ControleCadastraMusica ccm;
 	private ControleExibirMusicas cem;
+	private ControlePesquisarMusicaNome cpmn;
+	private ControlePesquisarMusicaArtista cpma;
 	
 	//Metodo Construtor
 	public ControlPrincipal() {
@@ -28,6 +30,8 @@ public class ControlPrincipal {
 		this.cea = new ControleExibirArtista(bd);
 		this.ccm = new ControleCadastraMusica(bd);
 		this.cem = new ControleExibirMusicas(bd);
+		this.cpmn = new ControlePesquisarMusicaNome(bd);
+		this.cpma = new ControlePesquisarMusicaArtista(bd);
 		
 		//Exibir a janela de opcao pela primeira vez
 		tratarOpcao(this.vp.getOpcao());
@@ -41,11 +45,15 @@ public class ControlPrincipal {
 						break;
 			case "2": this.ccm.cadastraMusica();
 						break;
-			case "3": this.cea.exibirArtistas();
+			case "3": this.cpmn.pesquisarMusicaNome();
 						break;
-			case "4": this.cem.exibirMusicas();
+			case "4": this.cpma.pesquisarMusicaArtistaNome();
 						break;
-			case "5": JOptionPane.showMessageDialog(null, "Até breve!");
+			case "5": this.cea.exibirArtistas();
+						break;
+			case "6": this.cem.exibirMusicas();
+						break;
+			case "7": JOptionPane.showMessageDialog(null, "Até breve!");
 						return;
 			default: JOptionPane.showMessageDialog(null, "Favor digitar opção valida!");
 						break;
